@@ -21,7 +21,9 @@ public class ConsultadasCitas extends AppCompatActivity {
     public void mostrarCitas(){
         AlarmaAppOpenHelper alarmaAppOpenHelper = new AlarmaAppOpenHelper(getApplicationContext());
         SQLiteDatabase db = alarmaAppOpenHelper.getWritableDatabase();
+String [] nombreCampos = new String[]{
 
+        };
         Cursor cur = db.query("NOmbre tabla", new String[]{}, null, null, null, null, null);
 
 
