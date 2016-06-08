@@ -3,6 +3,7 @@ package ec.edu.epn.examenmovilesagenda;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,14 +20,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void crearCitas() {
+    public void crearCitas(View vi) {
         Intent intentCrearCita = new Intent(this, CrearCitas.class);
         startActivity(intentCrearCita);
 
     }
 
 
-    public void consultadasCitas() {
+    public void consultadasCitas(View vi) {
         Intent intentConsultar = new Intent(this, ConsultadasCitas.class);
         startActivity(intentConsultar);
     }
