@@ -17,6 +17,7 @@
         android:layout_gravity="center"
         android:text="@string/btnCrearCitas"
         android:drawableLeft="@drawable/ic_crear"
+        android:onClick="crearCitas"
         />
 
     <Button
@@ -25,5 +26,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/btnConsultarCitas"
-        android:drawableLeft="@drawable/ic_consultar"/>
+        android:drawableLeft="@drawable/ic_consultar"
+        android:onClick="consultadasCitas"/>
 </LinearLayout>
