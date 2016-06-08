@@ -5,6 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+import ec.edu.epn.examenmovilesagenda.R;
 
 import java.util.List;
 
@@ -26,10 +29,19 @@ public class CitaAdapter extends ArrayAdapter {
     if(view == null)
     {
         LayoutInflater inflador = LayoutInflater.from(getContext());
-        view=inflador.inflate(android.R.layout.)
-    }
+        view = inflador.inflate(R.layout.activity_consultadas_citas,null);
 
-        return view;
+    }
+    TextView titulo =(TextView)view.findViewById(R.id.lblTitulo);
+    TextView fecha =(TextView)view.findViewById(R.id.lblFecha);
+    TextView hora =(TextView)view.findViewById(R.id.lblHora);
+    CitaVO cita = listadoCita.get(posicion);
+    titulo.setText(cita.getTituloCita());
+    fecha.setText(cita.getFechaCIta());
+    hora.setText(cita.getHoraCita());
+
+
+    return view;
 }
 
 }
