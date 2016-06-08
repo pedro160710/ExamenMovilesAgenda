@@ -32,7 +32,11 @@ public class ConsultadasCitas extends AppCompatActivity {
         Cursor cur = db.query(AlarmaAppContract.TablaCita.NOMBRE_TABLA, nombreCampos, null, null, null, null, null);
 
         while (cur.moveToNext()) {
-    CitaVO citasVO = new CitaVO();
+            CitaVO citasVO = new CitaVO();
+            citasVO.setTitulo(cur.getColumnIndex(0));
+            citasVO.setFecha(cur.getColumnIndex(1));
+            citasVO.setHora(cur.getColumnIndex(2));
+
 
         }
 
