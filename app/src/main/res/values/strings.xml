@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ExamenMovilesAgenda</string>
+    <string name="btnCrearCitas">CREAR CITAS</string>
+    <string name="btnConsultarCitas">CONSULTAR CITAS</string>
 </resources>
