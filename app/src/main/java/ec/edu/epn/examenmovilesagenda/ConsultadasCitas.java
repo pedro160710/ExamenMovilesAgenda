@@ -6,17 +6,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import adaptador.CitaAdapter;
 import ec.edu.epn.examenmovilesagenda.sqlite.AlarmaAppContract;
 import ec.edu.epn.examenmovilesagenda.sqlite.AlarmaAppOpenHelper;
+import vo.CitaVO;
 
 public class ConsultadasCitas extends AppCompatActivity {
+    public List<CitaVO> listaCitas;
+    private ListView listViewListaCitas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consultadas_citas);
-
+        listaCitas = new ArrayList<CitaVO>();
+        listViewListaCitas = (ListView) findViewById(R.id.lvCitas);
         mostrarCitas();
     }
 
@@ -33,14 +42,15 @@ public class ConsultadasCitas extends AppCompatActivity {
 
         while (cur.moveToNext()) {
             CitaVO citasVO = new CitaVO();
-            citasVO.setTitulo(cur.getColumnIndex(0));
-            citasVO.setFecha(cur.getColumnIndex(1));
-            citasVO.setHora(cur.getColumnIndex(2));
-
+            citasVO.setTituloCita(cur.getString(0));
+            citasVO.setFechaCIta(cur.getString(1));
+            citasVO.setHoraCita(cur.getString(2));
+            listaCitas.add(citasVO);
 
         }
 
+        CitaAdapter citaAdapter  = new CitaAdapter(this,listaCitas);
+        listViewListaCitas.setAdapter(citaAdapter);
     }
-
 
 }
