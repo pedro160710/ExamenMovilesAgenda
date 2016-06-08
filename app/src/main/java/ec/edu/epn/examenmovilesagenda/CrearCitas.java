@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import ec.edu.epn.examenmovilesagenda.sqlite.AlarmaAppContract;
 import ec.edu.epn.examenmovilesagenda.sqlite.AlarmaAppOpenHelper;
 
 public class CrearCitas extends AppCompatActivity {
@@ -31,11 +32,11 @@ public class CrearCitas extends AppCompatActivity {
 
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put("nombrecampo", editTextTitulo.getText().toString());
-        contentValues.put("nombrecampo", editTextFecha.getText().toString());
-        contentValues.put("nombrecampo", editTextHora.getText().toString());
+        contentValues.put(AlarmaAppContract.TablaCita.COLUMNA_TITULO_CITA, editTextTitulo.getText().toString());
+        contentValues.put(AlarmaAppContract.TablaCita.COLUMNA_FECHA_CITA, editTextFecha.getText().toString());
+        contentValues.put(AlarmaAppContract.TablaCita.COLUMNA_HORA_CITA, editTextHora.getText().toString());
 
-        db.insert("nombreTabla", null, contentValues);
+        db.insert(AlarmaAppContract.TablaCita.NOMBRE_TABLA, null, contentValues);
         db.close();
         Toast.makeText(this, "datos almacenados", Toast.LENGTH_SHORT).show();
     }

@@ -26,10 +26,10 @@ public class ConsultadasCitas extends AppCompatActivity {
         setContentView(R.layout.activity_consultadas_citas);
         listaCitas = new ArrayList<CitaVO>();
         listViewListaCitas = (ListView) findViewById(R.id.lvCitas);
-        mostrarCitas();
+        
     }
 
-    public void mostrarCitas() {
+    public void mostrarCitas(View view) {
         AlarmaAppOpenHelper alarmaAppOpenHelper = new AlarmaAppOpenHelper(getApplicationContext());
         SQLiteDatabase db = alarmaAppOpenHelper.getReadableDatabase();
         String[] nombreCampos = new String[]{
