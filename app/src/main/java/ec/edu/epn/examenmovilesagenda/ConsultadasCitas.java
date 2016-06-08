@@ -1,8 +1,12 @@
 package ec.edu.epn.examenmovilesagenda;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import ec.edu.epn.examenmovilesagenda.sqlite.AlarmaAppOpenHelper;
 
 public class ConsultadasCitas extends AppCompatActivity {
 
@@ -15,9 +19,13 @@ public class ConsultadasCitas extends AppCompatActivity {
     }
 
     public void mostrarCitas(){
+        AlarmaAppOpenHelper alarmaAppOpenHelper = new AlarmaAppOpenHelper(getApplicationContext());
+        SQLiteDatabase db = alarmaAppOpenHelper.getWritableDatabase();
+
+        Cursor cur = db.query("NOmbre tabla", new String[]{}, null, null, null, null, null);
 
 
-        
+
     }
 
 
