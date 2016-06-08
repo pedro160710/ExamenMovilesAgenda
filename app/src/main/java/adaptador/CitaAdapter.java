@@ -30,7 +30,6 @@ public class CitaAdapter extends ArrayAdapter {
     {
         LayoutInflater inflador = LayoutInflater.from(getContext());
         view = inflador.inflate(R.layout.activity_consultadas_citas,null);
-
     }
     TextView titulo =(TextView)view.findViewById(R.id.lblTitulo);
     TextView fecha =(TextView)view.findViewById(R.id.lblFecha);

@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ public class CrearCitas extends AppCompatActivity {
     private EditText editTextTitulo;
     private EditText editTextFecha;
     private EditText editTextHora;
+    private Button buttonCrearCita;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +26,10 @@ public class CrearCitas extends AppCompatActivity {
         editTextTitulo = (EditText) findViewById(R.id.editTextTitulo);
         editTextFecha = (EditText) findViewById(R.id.editTextFecha);
         editTextHora = (EditText) findViewById(R.id.editTextHora);
+        buttonCrearCita = (Button) findViewById(R.id.btnCrearCita);
     }
 
-    public void crearCitas(View view) {
+    public void crearCitasCrear(View view) {
         AlarmaAppOpenHelper alarmaAppOpenHelper = new AlarmaAppOpenHelper(getApplicationContext());
         SQLiteDatabase db = alarmaAppOpenHelper.getWritableDatabase();
 
